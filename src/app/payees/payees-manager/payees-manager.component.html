@@ -10,6 +10,11 @@
 </div>
 
 <ng-template #list>
-  <payees-list [inputPayees]="payees"
+<!--   <payees-list [inputPayees]="payees"
                (selectPayee)="handleSelectPayee($event)"></payees-list>
+ -->
+
+ <data-grid [data]="payees"
+            [config]="{columns: ['payeeName', 'address.city', 'address.state']}">
+ </data-grid>
 </ng-template>
