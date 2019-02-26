@@ -10,6 +10,7 @@ import { PayeesDaoService } from '../payees-dao.service';
 })
 export class PayeesManagerComponent implements OnInit {
   payees: Payee[];
+  selectedPayee: Payee = null;
 
   constructor(private dao: PayeesDaoService) {}
 
@@ -21,7 +22,6 @@ export class PayeesManagerComponent implements OnInit {
 
   handleSelectPayee(payee: Payee) {
     console.log('You selected ' + payee.payeeName);
+    this.selectedPayee = payee;
   }
-
-
 }

@@ -1,11 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Payee } from '../payee-types';
 
 @Component({
-  selector: 'app-payee-detail',
+  selector: 'payee-detail',
   templateUrl: './payee-detail.component.html',
   styleUrls: ['./payee-detail.component.css']
 })
 export class PayeeDetailComponent implements OnInit {
+
+  @Input()
+  selectedPayee: Payee = null;
 
   constructor() { }
 
