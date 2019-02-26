@@ -19,5 +19,9 @@ export class PayeesManagerComponent implements OnInit {
     });
   }
 
+  handleSelectPayee(payee: Payee) {
+    console.log('You selected ' + payee.payeeName);
+  }
+
 
 }

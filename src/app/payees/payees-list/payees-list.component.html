@@ -10,7 +10,8 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let payee of inputPayees">
+      <tr *ngFor="let payee of inputPayees"
+          (click)="handleRowClick(payee)">
         <td>{{ payee.payeeName }}</td>
         <td>{{ payee.address?.city }}</td>
         <td>{{ payee.address?.state }}</td>

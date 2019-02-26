@@ -3,5 +3,7 @@
   <p>Waiting for payees count</p>
 </ng-template>
 
-<payees-list [inputPayees]="payees"></payees-list>
+<payees-list
+  [inputPayees]="payees"
+  (selectPayee)="handleSelectPayee($event)"></payees-list>
 

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Payee, SortDirection } from '../payee-types';
 import * as _ from 'lodash';
 
@@ -12,12 +12,19 @@ export class PayeesListComponent implements OnInit {
   lastSortField = '';
   lastSortDirection = SortDirection.asc;
 
+  @Output()
+  selectPayee = new EventEmitter<Payee>();
+
   @Input()
   inputPayees: Payee[];
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  handleRowClick(payee: Payee) {
+    console.log('You clicked on a row!');
+    this.selectPayee.emit(payee);
   }
 
   handleHeaderClick(field: string) {
