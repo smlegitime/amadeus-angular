@@ -15,3 +15,9 @@ export interface Address {
   state: string;
   zip: string;
 }
+
+export enum SortDirection {
+  asc = 'asc',
+  desc = 'desc',
+}
+

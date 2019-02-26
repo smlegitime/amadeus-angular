@@ -3,22 +3,5 @@
   <p>Waiting for payees count</p>
 </ng-template>
 
-<table class="table table-striped table-hover table-dark">
-  <thead>
-    <tr>
-      <th (click)="handleHeaderClick('payeeName')"
-          [ngClass]="getSortClass('payeeName')">Name</th>
-      <th (click)="handleHeaderClick('address.city')"
-          [ngClass]="getSortClass('address.city')">City</th>
-      <th (click)="handleHeaderClick('address.state')"
-          [ngClass]="getSortClass('address.state')">State</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let payee of payees">
-      <td>{{ payee.payeeName }}</td>
-      <td>{{ payee.address?.city }}</td>
-      <td>{{ payee.address?.state }}</td>
-    </tr>
-  </tbody>
-</table>
+<payees-list [inputPayees]="payees"></payees-list>
+
