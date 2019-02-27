@@ -1,0 +1,15 @@
+th {
+  cursor: pointer;
+}
+
+.sort-asc::after {
+  content: ' ⬆️';
+}
+
+.sort-desc::after {
+  content: ' ⬇️'
+}
+
+.sort-blank::after {
+  content: '\00a0';
+}

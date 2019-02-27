@@ -1,13 +1,16 @@
 <table class="table">
   <thead>
     <tr>
-      <th *ngFor="let column of config.columns">
+      <th *ngFor="let column of config.columns"
+          (click)="handleHeaderClick(column)"
+          [ngClass]="getSortClass(column)">
         {{ formatColumn(column) }}
       </th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let item of data">
+    <tr *ngFor="let item of data"
+        (click)="handleRowClick(item)">
       <td *ngFor="let column of config.columns">
         {{ getItem(item, column) }}
       </td>
